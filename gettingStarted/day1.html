@@ -6,25 +6,13 @@
 
     <body>
         <div id="app">
-            <h1 v-once> {{ title }}</h1>
-            <p>
-            {{ sayHello() }} - <a v-bind:href="link">Google</a>
-            </p>
-            <p v-html="finishedLink"></p>
+            <p>{{ title }}</p>
           </div>
           <script>
                 new Vue({
                     el: "#app",
                     data: {
-                        title: "hello world",
-                        link: 'http://google.com',
-                        finishedLink: '<a href="http://google.com">Google</a>'
-                    },
-                    methods: {
-                        sayHello: function(){
-                        this.title = 'Hello!';
-                            return this.title
-                        }
+                        title: "hello world!"
                     }
                 })
             </script>

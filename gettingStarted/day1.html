@@ -6,16 +6,22 @@
 
     <body>
         <div id="app">
+            <input type="text" v-on:input="changeTitle" />
             <p>{{ title }}</p>
-          </div>
-          <script>
-                new Vue({
-                    el: "#app",
-                    data: {
-                        title: "hello world!"
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    title: "hello world!"
+                },
+                methods: {
+                    changeTitle: function(event) {
+                        this.title = event.target.value
                     }
-                })
-            </script>
+                }
+            })
+        </script>
     </body>
 
 </html>

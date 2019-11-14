@@ -1,9 +1,7 @@
 <html>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
     </head>
-
     <body>
         <div id="app">
             <button v-on:click="counter++">Increase</button>
@@ -22,7 +20,15 @@
                 computed: {
                     output: function() {
                         console.log('comouted')
-                    return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                        return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                    }
+                },
+                watch: {
+                    counter: function(value){
+                        var vm = this;
+                        setTimeout(function(){
+                            vm.counter = 0;
+                        },2000)
                     }
                 },
                 methods: {

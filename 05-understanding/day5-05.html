@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app1">
+            <p>{{ title }}</p>
+            <button id="myButton" @click="show" ref="myButton" >show paragraph</button>
+        </div>
+        <div id="app3"></div>
+        <div id="app4"></div>
+        <script>
+              let data =  {
+                  title : 'this is first instance'
+                }
+              let app1 = new Vue({
+                data:data,
+                methods:{
+                  show: function(){
+                    this.title = "change title"
+                    this.$refs.myButton.innerText = "init"
+                  }
+                }
+              })
+              app1.$mount('#app1')
+              let app3 = new Vue({
+                template:'<h1>Hello</h1>'
+              })
+              app3.$mount('#app3')
+
+              let app4 = new Vue({
+                template:'<h1>Hello by document</h1>'
+              })
+              app4.$mount()
+              document.getElementById('app4').appendChild(app4.$el)
+          </script>
+    </body>
+
+</html> 

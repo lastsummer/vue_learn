@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app1">
+            <p>{{ title }}</p>
+        </div>
+        <div id="app2">
+          <p>{{ title }}</p>
+          <button @click="onChange">Change app1 instance</button>
+        </div>
+        <script>
+              let app1 = new Vue({
+                el: "#app1",
+                data: {
+                  title : 'this is first instance'
+                }
+              })
+              console.log(app1)
+              console.log(app1.$data.title)
+              let app2 = new Vue({
+                el: "#app2",
+                data: {
+                  title : 'this is second instance'
+                },
+                methods:{
+                  onChange: function(){
+                    app1.title = "change first instance"
+                  }
+                }
+              })
+          </script>
+    </body>
+
+</html> 

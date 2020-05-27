@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app1">
+            <p>{{ title }}</p>
+        </div>
+        <script>
+              let data =  {
+                  title : 'this is first instance'
+                }
+              let app1 = new Vue({
+                el: "#app1",
+                data:data
+              })
+              console.log(app1)
+              console.log(app1.$data === data)
+
+          </script>
+    </body>
+
+</html> 

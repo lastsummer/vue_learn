@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app1">
+            <p>{{ title }}</p>
+            <button id="myButton" @click="show" ref="myButton" >show paragraph</button>
+        </div>
+        <script>
+              let data =  {
+                  title : 'this is first instance'
+                }
+              let app1 = new Vue({
+                el: "#app1",
+                data:data,
+                methods:{
+                  show: function(){
+                    this.title = "change title"
+                    this.$refs.myButton.innerText = "init"
+                  }
+                }
+              })
+              console.log(app1.$refs)
+          </script>
+    </body>
+
+</html> 

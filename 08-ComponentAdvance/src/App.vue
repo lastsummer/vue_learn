@@ -5,10 +5,12 @@
     <button @click="selectedComponent = 'Author'">Author</button>
     <button @click="selectedComponent = 'New'">New</button>
     <p> {{ selectedComponent }} </p>
-    <component :is="selectedComponent">
-      <h2 slot="title">{{quoteTitle}}</h2>
-      <p slot="content">A wonderful Quote!</p>
-    </component>
+    <keep-alive>
+      <component :is="selectedComponent">
+        <h2 slot="title">{{quoteTitle}}</h2>
+        <p slot="content">A wonderful Quote!</p>
+      </component>
+    </keep-alive>
   </div>
 </template>
 

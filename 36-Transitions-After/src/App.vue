@@ -44,19 +44,30 @@
           :css="false">
           <div style="width:300px;height:100px;background-color:lightgreen" v-if="load"></div>
         </transition>
+        <hr>
+        <button class="btn btn-primary"
+          @click="selectedComponent === 'dangerAlert' ? selectedComponent = 'successAlert': selectedComponent = 'dangerAlert'">Toogle Component</button>
+        <br><br>
+        <transition name="fade" mode="out-in">
+          <component :is="selectedComponent"></component>
+        </transition>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import dangerAlert from './DangerAlert.vue'
+import successAlert from './SuccessAlert.vue'
+
 export default {
   data() {
     return {
       show: false,
       alertAnimation: 'fade',
       load: true,
-      elementWidth: 100
+      elementWidth: 100,
+      selectedComponent: 'dangerAlert'
     }
   },
   methods: {
@@ -105,6 +116,10 @@ export default {
     },leaveCancelled(el){
       console.log('leaveCancelled')
     }
+  },
+  components:{
+    dangerAlert,
+    successAlert
   }
 }
 </script>

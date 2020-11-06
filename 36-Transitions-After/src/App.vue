@@ -53,13 +53,14 @@
         </transition>
       </div>
     </div>
+    <group/>
   </div>
 </template>
 
 <script>
 import dangerAlert from './DangerAlert.vue'
 import successAlert from './SuccessAlert.vue'
-
+import group from './Group.vue'
 export default {
   data() {
     return {
@@ -67,7 +68,8 @@ export default {
       alertAnimation: 'fade',
       load: true,
       elementWidth: 100,
-      selectedComponent: 'dangerAlert'
+      selectedComponent: 'dangerAlert',
+      numbers: [1, 2, 3, 4, 5]
     }
   },
   methods: {
@@ -119,7 +121,8 @@ export default {
   },
   components:{
     dangerAlert,
-    successAlert
+    successAlert,
+    group
   }
 }
 </script>
